@@ -35,10 +35,12 @@ const ToggleState = () => {
       {current.matches('inactive') && <p>We are inactive</p>}
       {/* conditional rendering to load text based on current (state) value */}
       <br />
-      <button onClick={() => {
-        send('TOGGLE')
-        // this sends the TOGGLE action to the FSM
-      }}>Toggle State</button>
+
+      <button onClick={() => send('TOGGLE')}>
+        {current.matches('inactive') ? 'Active' : 'Inactive'}
+      </button>
+      {/* button to send TOGGLE action to the FSM with conditional rendering button text */}
+
     </>
   )
 }
